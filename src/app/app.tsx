@@ -4,7 +4,7 @@ import logo from './logo.svg';
 
 const env = process.env.NODE_ENV?.toUpperCase();
 
-function App() {
+export function App() {
     return (
         <div className="App">
             <header className="App-header">
@@ -22,5 +22,3 @@ function App() {
         </div>
     );
 }
-
-export default App;

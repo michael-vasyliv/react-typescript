@@ -17,7 +17,7 @@ module.exports = merge(common, {
     },
     output: {
         /** allows you use breakpoints in vscode debugger */
-        devtoolModuleFilenameTemplate: (x => path.resolve(x.absoluteResourcePath).replace(/\\/g, '/'))
+        devtoolModuleFilenameTemplate: ((x) => path.resolve(x.absoluteResourcePath).replace(/\\/g, '/'))
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

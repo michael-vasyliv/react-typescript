@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    context: `${__dirname}/src`,
+    context: path.resolve(__dirname, 'src'),
     entry: './index.tsx',
     target: 'web',
     resolve: {
@@ -35,8 +35,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-              { from: `${__dirname}/public`, to: '' },
+                { from: `${__dirname}/public`, to: './' },
             ],
-          }),
+        }),
     ]
 };

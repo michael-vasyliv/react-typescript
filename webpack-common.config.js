@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
@@ -35,8 +36,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: `${__dirname}/public`, to: './' },
-            ],
-        }),
+                { from: `${__dirname}/public`, to: './' }
+            ]
+        })
     ]
 };

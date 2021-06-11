@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env NODE_ENV=development",
-    "build": "",
+    "start": "webpack serve --config webpack-dev.config.js",
+    "build": "webpack --config webpack-prod.config.js",
     "test": "jest"
   },
   "eslintConfig": {
@@ -33,6 +33,7 @@
     "@types/react-dom": "^17.0.7",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
@@ -46,6 +47,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   }
 }

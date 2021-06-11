@@ -2,14 +2,14 @@ import React from 'react';
 import './app.scss';
 import logo from './logo.svg';
 
+const env = process.env.NODE_ENV?.toUpperCase();
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        {env}
         <a
           className="App-link"
           href="https://reactjs.org"

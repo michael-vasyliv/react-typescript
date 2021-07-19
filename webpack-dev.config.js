@@ -9,7 +9,7 @@ module.exports = merge(common, {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: './built',
+        contentBase: './build',
         hot: true,
         compress: true,
         port: 4000,

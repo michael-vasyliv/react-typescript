@@ -44,14 +44,7 @@ module.exports = merge(common, {
                     preset: ['default', { minifyFontValues: { removeQuotes: false } }]
                 }
             })
-        ],
-        splitChunks: {
-            chunks: 'all',
-            name: false
-        },
-        runtimeChunk: {
-            name: (entrypoint) => `runtime-${entrypoint.name}`
-        }
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin({

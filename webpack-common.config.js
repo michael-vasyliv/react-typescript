@@ -2,13 +2,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: './index.tsx',
     target: 'web',
+    stats: {
+        modules: false
+    },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         plugins: [new TsconfigPathsPlugin()]
@@ -16,7 +19,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 use: { loader: 'babel-loader' },
                 exclude: [/node_modules/]
             },
@@ -29,6 +32,14 @@ module.exports = {
                 use: { loader: 'url-loader' }
             }
         ]
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        },
+        runtimeChunk: {
+            name: (entrypoint) => `runtime-${entrypoint.name}`
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,8 +1,9 @@
 declare module '*.svg' {
     import * as React from 'react';
 
-    export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string }>;
+    const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 
-    const src: string;
-    export default src;
+    export default ReactComponent;
 }
+
+type ExtendProps<T extends (...args: any) => any> = T extends (first: infer P) => any ? P : never;

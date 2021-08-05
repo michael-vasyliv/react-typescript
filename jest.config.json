@@ -6,7 +6,6 @@
     "roots": ["<rootDir>/tests/"],
     "moduleNameMapper": {
         "@components/(.*)": "<rootDir>/src/components/$1",
-        "@src/(.*)": "<rootDir>/src/$1",
         "\\.(css|less|svg|scss)$": "<rootDir>/tests/__mocks__/style.ts"
     },
     "transform": {

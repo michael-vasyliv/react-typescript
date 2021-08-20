@@ -7,3 +7,5 @@ declare module '*.svg' {
 }
 
 type ExtendProps<T extends (...args: any) => any> = T extends (first: infer P) => any ? P : never;
+
+type Nullable<T> = T | undefined;

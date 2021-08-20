@@ -2,13 +2,13 @@ import React from 'react';
 import './app.scss';
 import Logo from './logo.svg';
 
-const env = process.env.NODE_ENV?.toUpperCase();
+const { NODE_ENV = '' } = process.env;
 
 export function App() {
     return (
         <main className="main">
             <Logo className="app-logo" />
-            {env}
+            {NODE_ENV}
             <a
                 href="https://reactjs.org"
                 target="_blank"

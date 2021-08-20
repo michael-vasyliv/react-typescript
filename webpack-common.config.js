@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -49,6 +50,13 @@ module.exports = {
             patterns: [
                 { from: `${__dirname}/public`, to: './' }
             ]
+        }),
+        new webpack.DefinePlugin({
+            'process.env': Object.keys(process.env).reduce((result, key) => {
+                // eslint-disable-next-line no-param-reassign
+                result[key] = JSON.stringify(process.env[key]);
+                return result;
+            }, {})
         })
     ]
 };

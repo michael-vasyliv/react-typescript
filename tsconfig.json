@@ -27,6 +27,11 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ]
+    }
   }
 }

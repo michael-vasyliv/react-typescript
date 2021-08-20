@@ -1,6 +1,6 @@
 import React from 'react';
 import './app.scss';
-import logo from './logo.svg';
+import Logo from './logo.svg';
 
 const env = process.env.NODE_ENV?.toUpperCase();
 
@@ -8,7 +8,7 @@ export function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                <Logo className="App-logo" />
                 {env}
                 <a
                     className="App-link"
